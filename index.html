@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>dbox</title>
+	<meta charset="utf-8">
+
+	<link rel="stylesheet" href="css/style.css">
+	<!-- base libs-->
+	<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+	<script type="text/javascript" src="js/taffy.js"></script>
+	<script type="text/javascript" src="js/jquery.tmpl.js"></script>
+	<!-- core -->
+	<script type="text/javascript" src="base.js"></script>
+	<script type="text/javascript" src="player.js"></script>
+	<script type="text/javascript" src="vk.js"></script>
+	<script type="text/javascript" src="load.js"></script>
+
+	<!-- VK -->
+	<script type="text/javascript" src="https://vk.com/js/api/openapi.js?78"></script>
+
+</head>
+<body>
+	<div id="splash-screen" class="hide">
+		<div id="conslog">
+		</div>
+	</div>
+	<div id="loading" class="hide">
+	</div>
+	<div id="downloader" class="hide">
+	</div>
+	<div id="comments" class="hide">
+		<script type="text/javascript">
+		  VK.init({apiId: 1862335, onlyWidgets: true});
+		</script>
+
+		<!-- Put this div tag to the place, where the Comments block will be -->
+		<div id="vk_comments"></div>
+		<script type="text/javascript">
+		VK.Widgets.Comments("vk_comments", {limit: 10, width: "520", attach: false, autoPublish:0},"db_box_comment_stream");
+		</script>
+	</div>
+	<div id="player-wrapper">
+		<div id="player">
+			<div class="controls">
+				<div class="space"></div>
+				<div id="play" class="button-controls play-btn"></div>
+				<div id="pause" class="button-controls pause-btn hide"></div>
+				<div id="prev" class="button-controls"></div>
+				<div id="next" class="button-controls"></div>
+			</div>
+			<div class="bars">
+				<div id="title">
+					<span class="artist">Cat tard</span> - <span class="title">tittle feat.fuu</span>
+					<div id="timeleft"><span class="time">0:00</span></div>
+				</div>
+				<div id="seekbar">
+					<input class="progressbar" type="range" max="100" min="0" value="0"/>
+				</div>
+			</div>
+			<div class="bars2">
+				<div id="social"><a href="#">vk.com</a>&nbsp;<a href="#">last.fm</a></div>
+				<div id="volumebar">
+					<input class="volumebar" type="range" max="100" min="0" value="100"/>
+				</div>
+			</div>
+		</div>
+		<div id="playlist" class="hide">
+			<div id="search">
+				<input type="search"  id="search-box" results="5" name="s" placeholder="Search ...">
+				<div id="search-btn"></div>
+			</div>
+		</div>
+		<div id="buttom-bar">
+			<button class="base hide">Test</button>
+
+		</div>
+	</div>
+
+<script id="track-tpl" type="text/x-jquery-tmpl">
+	<div class="track" data-id="${___id}">
+		<div id="buttons">
+			<div id="play-pl" class="button"></div>
+			<div id="pause-pl" class="button hide"></div>					
+		</div>
+		<div id="title" style="float:left;margin-left:3px;">
+			<span class="artist">${artist}</span>
+			<span>&#8211;</span>
+			<span class="title">${title}</span>
+		</div>
+		<span class="time">${secondsToHms(duration)}</span>
+	</div>	
+</script>
+
+
+
+</body>
+</html>	

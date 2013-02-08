@@ -1,0 +1,21 @@
+{
+  "name": "dbox",
+  "version": "0.1.0.0",
+  "description": "dbox offline player",
+  "main": "index.html",
+  "window": {
+  //  "min_height" : 452,
+  //  "min_width":540,
+  //  "max_height" : 452,
+  //  "max_width":540,
+  //  "frame": false,
+  //  "toolbar": false,    
+    "width": 540,
+    "height": 472,
+    "title": "dbox",
+    "resizable": false,
+    "show": false,
+    "position": "center"
+  },
+  "chromium-args":"--disable-backing-store-limit --disable-xss-auditor --no-sandbox"
+}
